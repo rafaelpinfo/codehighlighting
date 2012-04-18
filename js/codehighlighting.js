@@ -1,5 +1,4 @@
-
-	 function  Save_Button_onclick() {
+    function  Save_Button_onclick() {
 	 var lang = document.getElementById("ProgrammingLanguages").value;
 	 var syntax = document.getElementById("Syntax").value;
 	 
@@ -10,13 +9,12 @@
 		 code =  WrapCodePrettify(lang);	 
 	 }
 	 
-	 
 	 code = code + document.getElementById("CodeArea").value;
 	 code = code + "</pre> "
-     if (document.getElementById("CodeArea").value == ''){
-		tinyMCEPopup.close();
-		return false;
-	}
+	     if (document.getElementById("CodeArea").value == ''){
+			tinyMCEPopup.close();
+			return false;
+		}
 	tinyMCEPopup.execCommand('mceInsertContent', false, code);
 	tinyMCEPopup.close();
     }
@@ -42,6 +40,7 @@
     
     function WrapCodePrettify(lang){
     	
+	var langPrettify = "";
     	switch(lang){
 	    	case 'c++':
 	    		langPrettify = "cpp";
